@@ -83,14 +83,14 @@ public class ZLEditImageConfiguration: NSObject {
         }
     }
     
-    private var pri_tools: [ZLEditImageConfiguration.EditTool] = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter, .adjust]
+    private var pri_tools: [ZLEditImageConfiguration.EditTool] = [.draw]
     /// Edit image tools. (Default order is draw, clip, imageSticker, textSticker, mosaic, filtter)
     /// Because Objective-C Array can't contain Enum styles, so this property is invalid in Objective-C.
     /// - warning: If you want to use the image sticker feature, you must provide a view that implements ZLImageStickerContainerDelegate.
     public var tools: [ZLEditImageConfiguration.EditTool] {
         get {
             if pri_tools.isEmpty {
-                return [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter, .adjust]
+                return [.draw]
             } else {
                 return pri_tools
             }
